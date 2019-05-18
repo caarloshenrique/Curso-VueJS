@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./vue.js"></script>
+  <title>Vue.js</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(valor, key) in estados">
+        <p>{{valor.nome}}</p>
+        <p>{{valor.populacao}}</p>
+      </li>
+      <li v-for="({nome, populacao}, key) in estados">
+        <p>{{nome}}</p>
+        <p>{{populacao}}</p>
+      </li>
+    </ul>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        frutas: ["banana", "UVA", "Limão"],
+        estados: {
+          sp: {
+            populacao: "45 milhões",
+            nome: "São Paulo"
+          },
+          mg: {
+            populacao: "21 milhões",
+            nome: "minas Gerais"
+          },
+          rj: {
+            populacao: "17 milhões",
+            nome: "Rio de Janeiro"
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
